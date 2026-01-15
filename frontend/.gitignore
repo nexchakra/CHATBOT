@@ -25,7 +25,6 @@ include/
 .env.*
 backend/.env
 frontend/.env
-
 # Testing & Coverage
 /coverage
 .pytest_cache/

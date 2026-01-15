@@ -1,0 +1,9 @@
+# Ignore secrets in any folder
+.env
+backend/.env
+frontend/.env
+
+# Ignore large dependency folders
+node_modules/
+venv/
+frontend/node_modules/

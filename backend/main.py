@@ -1,9 +1,14 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routes import chat # Import your router
+from routes import chat 
+from data.db import init_db  # Import the initialization function
 
-app = FastAPI()
+# Initialize the database and create nexchakra_leads.db
+init_db() 
 
+app = FastAPI(title="NexChakra AI Backend")
+
+# CORS configuration
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000"],
@@ -11,9 +16,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# This replaces your old @app.post("/chat")
 app.include_router(chat.router)
 
 @app.get("/")
 def home():
-    return {"message": "NexChakra Backend Running"}
+    return {"message": "Namaste! NexChakra Backend is running and Database is active."}
