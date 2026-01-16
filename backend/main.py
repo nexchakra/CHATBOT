@@ -1,9 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from routes import chat 
-from data.db import init_db  # Import the initialization function
+from data.db import init_db  
 
-# Initialize the database and create nexchakra_leads.db
 init_db() 
 
 app = FastAPI(title="NexChakra AI Backend")

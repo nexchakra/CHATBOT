@@ -1,4 +1,4 @@
-# backend/data/db.py
+
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -12,6 +12,6 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
 def init_db():
-    # Move model import INSIDE the function to avoid circular loops with models
+    
     import models.lead 
     Base.metadata.create_all(bind=engine)

@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Send, Bot, Sparkles } from 'lucide-react';
 
-// Added Interface to solve TypeScript 'buttons' error
+
 interface Message {
   role: 'bot' | 'user';
   text: string;
